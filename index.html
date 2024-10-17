@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partha Santosh | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Animation styles */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Bento grid responsive adjustments */
+        .grid-bento {
+            grid-template-areas:
+                "a b"
+                "c d"
+                "e e";
+        }
+
+        @media (min-width: 768px) {
+            .grid-bento {
+                grid-template-areas:
+                    "a b c"
+                    "d d e";
+            }
+        }
+        @media (max-width: 430px) {
+            .grid-bento {
+                grid-template-areas:
+                    "a"
+                    "b"
+                    "c"
+                    "d"
+                    "e";
+            }
+        }
+    </style>
+    <script>
+        // Dark mode toggle script
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Intersection Observer for animations
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+<style>
+    /* Hide the default cursor */
+    * {
+        cursor: none;
+    }
+
+    /* Custom circular cursor */
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 25px; /* Cursor size */
+        height: 25px;
+        background-color: rgb(255, 255, 255); /* White with transparency */
+        border: 2px solid #697565; /* Circular border */
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1000;
+        transition: transform 0.1s ease, background-color 0.3s ease;
+        mix-blend-mode: difference; /* So it works on light and dark backgrounds */
+    }
+
+    /* When hovering on certain elements, make the cursor bigger */
+    .custom-cursor.hovering {
+        transform: scale(1.5);
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    /* Apply Poppins globally */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+    /* Add this inside your <style> section */
+.about-section {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #697565 30%, #3C3D37 90%);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-section {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #697565, #3C3D37);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient for Project Section */
+.project-section {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #697565, #3C3D37);
+    position: relative;
+    color: #fff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient for Contact Form Section */
+.contact-form {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #697565 30%, #3C3D37 90%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form input, .contact-form textarea {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #3C3D37;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.contact-form button:hover {
+    background-color: #697565;
+}
+
+/* Gradient for Footer Section */
+.footer {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #697565, #3C3D37);
+    position: relative;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add animation to make the sections more dynamic */
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.project-section, .contact-form {
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+}
+
+ </style>
+<meta name="description" content="Portfolio of Partha Santosh: Full-stack developer and aspiring entrepreneur with experience in web development and data analytics.">
+<meta name="keywords" content="Partha Santosh, portfolio, full-stack development, data analytics, entrepreneur, software engineer, Thiruvananthapuram">
+
+</head>
+
+<body class="bg-[#181C14] text-[#ECDFCC] font-sans">
+ 
+    <!-- Grid Container using Bento Grid Design -->
+    <div class="max-w-6xl mx-auto p-6 grid grid-bento gap-6 fade-in">
+        
+
+
+
+
+        <!-- About Section (A) -->
+        <section class="about-section p-12 rounded-lg shadow-lg fade-in" style="grid-area: a;">
+            <h1 class="text-2x1 font-semibold">Partha Santosh</h1>
+            <br>
+            <div class="flex flex-col items-center">
+                <img src="pic 2.2.jpg" loading="lazy" alt="Profile Picture" class="w-43 h-43 rounded-full mb-4 shadow-lg transition-transform duration-300 hover:scale-110" />
+                <p class="text-lg mb-4 text-center text-[#ECDFCC]">
+                    Hi! I'm <strong>Partha Santosh</strong>, a passionate software engineer with a strong foundation in computer science and a proven ability to develop and implement innovative software solutions. Eager to leverage experience in web development, Google Analytics, data analysis, and project management to contribute to a challenging and rewarding career in the tech industry.
+                </p>
+                <a href="Partha_Santosh_Resume.pdf" download class="mt-4 inline-block bg-[#697565] text-[#ECDFCC] font-semibold py-2 px-4 rounded-lg transition-transform duration-500 hover:scale-110 hover:bg-[#ECDFCC] hover:text-[#181C14] flex items-center group">
+                    <svg class="w-6 h-6 mr-2 transition-transform duration-300 group-hover:translate-y-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Resume
+                </a>
+                <br>
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/partha01/" target="_blank" class="transition-transform transform hover:scale-110">
+                        <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/svgs/brands/linkedin.svg" alt="LinkedIn" class="w-6 h-6 md:w-8 md:h-8">
+                    </a>
+                    <a href="https://github.com/Parth0022" target="_blank" class="transition-transform transform hover:scale-110">
+                        <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/svgs/brands/github.svg" alt="GitHub" class="w-6 h-6 md:w-8 md:h-8">
+                    </a>
+                    <a href="mailto:parthasantosh01@gmail.com" target="_blank" class="transition-transform transform hover:scale-110">
+                        <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/svgs/solid/envelope.svg" alt="Email" class="w-6 h-6 md:w-8 md:h-8">
+                    </a>
+                    <a href="https://instagram.com/partha_santosh" target="_blank" class="transition-transform transform hover:scale-110">
+                        <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/svgs/brands/instagram.svg" alt="Instagram" class="w-6 h-6 md:w-8 md:h-8">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section (B) -->
+        <section class="skills-section p-12 rounded-lg shadow-lg fade-in" style="grid-area: b;">
+            <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+            <ul class="list-none space-y-4">
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-html5-plain colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>HTML</strong></span>
+                </li>
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-css3-plain colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>CSS</strong></span>
+                </li>
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-javascript-plain colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>JavaScript</strong></span>
+                </li>
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-react-original colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>React</strong></span>
+                </li>
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-tailwindcss-plain colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>Tailwind CSS</strong></span>
+                </li>
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-nodejs-plain colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>Node.js</strong></span>
+                </li>
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-express-original colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>Express</strong></span>
+                </li>
+                <li class="flex items-center space-x-3 text-lg transition-all duration-300 transform hover:scale-110 hover:text-[#ECDFCC] hover:shadow-md">
+                    <i class="devicon-mongodb-plain colored text-3xl transition-transform duration-300 hover:rotate-12"></i>
+                    <span class="hover:text-[#ECDFCC]"><strong>MongoDB</strong></span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Projects Section (C) -->
+<section class="project-section">
+    <h2 class="p-12 text-2xl font-semibold mb-4">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+        <!-- Project Card 1 -->
+        <div class="bg-[#697565] p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <a href="https://github.com/Parth0022/Parkinson-Disease-Detection-Final-Project" target="_blank" class="block">
+                <h3 class="text-xl font-semibold">Parkinson-Disease-Detection</h3>
+                <p class="text-sm mb-2">An innovative application leveraging machine learning models to facilitate the early detection of Parkinson’s disease.</p>
+                <div class="flex flex-wrap">
+                    <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">Jupyter Notebook</span>
+                </div>
+            </a>
+        </div>
+
+                <!-- Project Card 2 -->
+        <div class="bg-[#697565] p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <a href="https://github.com/Parth0022/sign-language-alphabet-recognizer" target="_blank" class="block">
+                <h3 class="text-xl font-semibold">Sign language alphabet recognizer</h3>
+                <p class="text-sm mb-2">Simple sign language alphabet recognizer using Python, openCV and tensorflow for training Inception model (CNN classifier).</p>
+                <div class="flex flex-wrap">
+                    <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">Python</span>
+                    <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">Dockerfile</span>
+                </div>
+            </a>
+        </div>
+
+         <!-- Project Card 3 -->
+         <div class="bg-[#697565] p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <a href="https://github.com/Parth0022/ToDo-App" target="_blank" class="block">
+                <h3 class="text-xl font-semibold">ToDo-App</h3>
+                <p class="text-sm mb-2">A To-Do list component for tracking various tasks.</p>
+                <div class="flex flex-wrap">
+                    <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">HTML</span>
+                    <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">CSS</span>
+                    <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">JavaScript</span>
+                </div>
+            </a>
+        </div>       
+
+            <!-- Project Card 4 -->
+            <div class="bg-[#697565] p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <a href="https://github.com/Parth0022/Responsive-Quiz-with-API" target="_blank" class="block">
+                    <h3 class="text-xl font-semibold">Responsive Quiz</h3>
+                    <p class="text-sm mb-2">A Simple Responsive-Quiz using REST API, includes a timmer</p>
+                    <div class="flex flex-wrap">
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">HTML</span>
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">CSS</span>
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">JavaScript</span>
+                    </div>
+                </a>
+            </div>
+
+                        <!-- Project Card 4 -->
+            <div class="bg-[#697565] p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <a href="https://github.com/Parth0022/Responsive-Quiz-with-API" target="_blank" class="block">
+                    <h3 class="text-xl font-semibold">Responsive Quiz</h3>
+                    <p class="text-sm mb-2">A Simple Responsive-Quiz using REST API, includes a timmer</p>
+                    <div class="flex flex-wrap">
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">HTML</span>
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">CSS</span>
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">JavaScript</span>
+                    </div>
+                </a>
+            </div>
+    
+                        <!-- Project Card 4 -->
+            <div class="bg-[#697565] p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <a href="https://github.com/Parth0022/Responsive-Quiz-with-API" target="_blank" class="block">
+                    <h3 class="text-xl font-semibold">Responsive Quiz</h3>
+                    <p class="text-sm mb-2">A Simple Responsive-Quiz using REST API, includes a timmer</p>
+                    <div class="flex flex-wrap">
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">HTML</span>
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">CSS</span>
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">JavaScript</span>
+                    </div>
+                </a>
+            </div>
+            <!-- Project Card 5 -->
+            <div class="bg-[#697565] p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <a href="https://github.com/Parth0022/Password-Generator" target="_blank" class="block">
+                    <h3 class="text-xl font-semibold">Password Generator</h3>
+                    <p class="text-sm mb-2">A simple Password Generator using python</p>
+                    <div class="flex flex-wrap">
+                        <span class="bg-[#ECDFCC] text-[#181C14] text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded">Python</span>
+                    </div>
+                </a>
+            </div>
+        <!-- Add more project cards as needed -->
+
+
+    </div>
+</section>
+
+<!-- Contact Form (D) -->
+<section class="about-section p-6 rounded-lg shadow-lg fade-in" style="grid-area: d;">
+    <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+    <form id="contactForm" action="#" method="POST" onsubmit="handleSubmit(event)">
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-medium">Name</label>
+            <input type="text" id="name" name="name" class="mt-1 block w-full p-2 bg-[#181C14] border border-[#697565] text-[#ECDFCC] rounded-lg" required pattern="[A-Za-z\s]+" title="Please enter a valid name (letters only)">
+            <small class="text-red-500 hidden" id="nameError">Please enter a valid name (letters only).</small>
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" name="email" class="mt-1 block w-full p-2 bg-[#181C14] border border-[#697565] text-[#ECDFCC] rounded-lg" required>
+            <small class="text-red-500 hidden" id="emailError">Please enter a valid email address.</small>
+        </div>
+        <div class="mb-4">
+            <label for="message" class="block text-sm font-medium">Message</label>
+            <textarea id="message" name="message" class="mt-1 block w-full p-2 bg-[#181C14] border border-[#697565] text-[#ECDFCC] rounded-lg" required minlength="10" maxlength="500" title="Please enter at least 10 characters."></textarea>
+            <small class="text-red-500 hidden" id="messageError">Message must be between 10 and 500 characters.</small>
+        </div>
+        <button type="submit" class="w-full bg-[#697565] text-[#ECDFCC] py-2 rounded-lg transition-transform duration-300 transform hover:scale-105 hover:bg-[#00ADB5]">Send Message</button>
+    </form>
+    <div id="toast" class="hidden fixed top-4 right-4 bg-[#00ADB5] text-[#181C14] p-4 rounded-lg shadow-lg transition-opacity duration-500 opacity-0">Message Sent!</div>
+</section>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        // Clear previous error messages
+        document.getElementById('nameError').classList.add('hidden');
+        document.getElementById('emailError').classList.add('hidden');
+        document.getElementById('messageError').classList.add('hidden');
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        let isValid = true;
+
+        // Validate name
+        if (!/^[A-Za-z\s]+$/.test(name)) {
+            document.getElementById('nameError').classList.remove('hidden');
+            isValid = false;
+        }
+
+        // Validate email
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            document.getElementById('emailError').classList.remove('hidden');
+            isValid = false;
+        }
+
+        // Validate message length
+        if (message.length < 10 || message.length > 500) {
+            document.getElementById('messageError').classList.remove('hidden');
+            isValid = false;
+        }
+
+        // If all validations pass, show the toast message and reset the form
+        if (isValid) {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            toast.classList.add('opacity-100');
+
+            // Fade out toast after 2 seconds
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('hidden'); // Hide it completely after fading out
+                }, 500);
+            }, 2000);
+
+            // Reset the form
+            event.target.reset();
+        }
+    }
+</script>
+
+<style>
+    #toast {
+        transition: opacity 0.5s ease-in-out;
+    }
+</style>
+
+        <!-- Footer (E) -->
+        <footer class="footer">
+            <p class="text-lg">&copy; 2024 Partha Santosh. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Create the custom cursor
+            const cursor = document.createElement('div');
+            cursor.classList.add('custom-cursor');
+            document.body.appendChild(cursor);
+    
+            // Update cursor position based on mouse movement
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.top = e.clientY + 'px';
+                cursor.style.left = e.clientX + 'px';
+            });
+    
+            // Add hovering effect for links, buttons, images, or any specific elements
+            const hoverElements = document.querySelectorAll('a, button, .project-card, img');
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+        });
+    </script>
+    
+    
+
+</body>
+
+</html>
